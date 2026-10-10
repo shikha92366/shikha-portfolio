@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#120A05"/>
+      <stop offset="1" stop-color="#1F110B"/>
+    </linearGradient>
+    <linearGradient id="powerGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#2D150B"/>
+      <stop offset="1" stop-color="#1A0D07"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bgGrad3)"/>
+  <path d="M50 0V450M150 0V450M250 0V450M350 0V450M450 0V450M550 0V450M650 0V450M750 0V450" stroke="#F59E0B" stroke-opacity="0.05" stroke-width="1"/>
+  <path d="M0 50H800M0 150H800M0 250H800M0 350H800" stroke="#F59E0B" stroke-opacity="0.05" stroke-width="1"/>
+
+  <!-- Inverter Bridge Block -->
+  <g transform="translate(40, 130)">
+    <rect width="180" height="200" rx="10" fill="url(#powerGrad)" stroke="#EF4444" stroke-width="1.5"/>
+    <text x="90" y="35" fill="#F87171" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">3-PHASE MOSFETS</text>
+    <text x="90" y="58" fill="#94A3B8" font-family="monospace" font-size="11" text-anchor="middle">6x Low-RDS(on) Power</text>
+    <rect x="20" y="80" width="140" height="40" rx="6" fill="#7F1D1D" fill-opacity="0.4"/>
+    <text x="90" y="105" fill="#FECACA" font-family="monospace" font-weight="bold" font-size="13" text-anchor="middle">36V / 40A Cont.</text>
+    <rect x="20" y="135" width="140" height="40" rx="6" fill="#450A0A" fill-opacity="0.5"/>
+    <text x="90" y="160" fill="#FCA5A5" font-family="sans-serif" font-size="11" text-anchor="middle">Kelvin Shunt Sensing</text>
+  </g>
+
+  <!-- STM32F4 Controller -->
+  <g transform="translate(280, 100)">
+    <rect width="240" height="250" rx="12" fill="#1C1008" stroke="#F59E0B" stroke-width="2"/>
+    <text x="120" y="38" fill="#FFFFFF" font-family="sans-serif" font-weight="800" font-size="16" text-anchor="middle">STM32F405RG</text>
+    <text x="120" y="58" fill="#FBBF24" font-family="monospace" font-size="12" text-anchor="middle">ARM Cortex-M4 + FPU</text>
+
+    <rect x="20" y="80" width="200" height="40" rx="6" fill="#78350F" stroke="#D97706"/>
+    <text x="120" y="105" fill="#FEF3C7" font-family="sans-serif" font-size="12" font-weight="600" text-anchor="middle">25kHz FOC Current Loop</text>
+
+    <rect x="20" y="130" width="200" height="40" rx="6" fill="#291B0D" stroke="#523114"/>
+    <text x="120" y="155" fill="#E2E8F0" font-family="sans-serif" font-size="12" text-anchor="middle">Clarke &amp; Park Transforms</text>
+
+    <rect x="20" y="180" width="200" height="40" rx="6" fill="#291B0D" stroke="#523114"/>
+    <text x="120" y="205" fill="#94A3B8" font-family="monospace" font-size="11" text-anchor="middle">Space Vector PWM (SVPWM)</text>
+  </g>
+
+  <!-- CAN & Motor Feedback -->
+  <g transform="translate(580, 130)">
+    <rect width="180" height="200" rx="10" fill="url(#powerGrad)" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="90" y="35" fill="#38BDF8" font-family="sans-serif" font-weight="bold" font-size="14" text-anchor="middle">INTERFACES</text>
+    <text x="90" y="58" fill="#94A3B8" font-family="monospace" font-size="11" text-anchor="middle">CAN 2.0B + Encoder</text>
+    <rect x="20" y="80" width="140" height="40" rx="6" fill="#0C4A6E" fill-opacity="0.4"/>
+    <text x="90" y="105" fill="#BAE6FD" font-family="monospace" font-size="12" text-anchor="middle">1Mbps CAN Bus</text>
+    <rect x="20" y="135" width="140" height="40" rx="6" fill="#075985" fill-opacity="0.4"/>
+    <text x="90" y="160" fill="#E0F2FE" font-family="sans-serif" font-size="11" text-anchor="middle">ABZ Optical Encoder</text>
+  </g>
+
+  <!-- Traces -->
+  <path d="M220 230 H 280 M 520 230 H 580" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- Top Title -->
+  <rect x="40" y="30" width="370" height="36" rx="18" fill="#451A03" stroke="#F59E0B" stroke-opacity="0.6"/>
+  <circle cx="60" cy="48" r="5" fill="#F59E0B"/>
+  <text x="75" y="53" fill="#FEF3C7" font-family="sans-serif" font-weight="600" font-size="13">High-Speed 4-Layer BLDC FOC Schematic</text>
+</svg>

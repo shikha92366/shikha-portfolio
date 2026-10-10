@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0a192f"/>
+  <text x="400" y="45" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#64ffda" text-anchor="middle">MOTORMIND AI: EDGE ANOMALY DETECTION PIPELINE</text>
+  <text x="400" y="70" font-family="'Nunito', sans-serif" font-size="12" fill="#8892b0" text-anchor="middle">ESP32 On-Device Decision Tree Inference • Zero Cloud Latency</text>
+
+  <rect x="50" y="110" width="170" height="280" rx="8" fill="#112240" stroke="#233554"/>
+  <text x="135" y="140" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#ccd6f6" text-anchor="middle">INDUCTION SENSORS</text>
+  <text x="135" y="180" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">ADXL345 (Vibration)</text>
+  <text x="135" y="220" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">ACS712 (Current)</text>
+  <text x="135" y="260" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">DS18B20 (Temp)</text>
+  <text x="135" y="300" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">IR Optical (RPM)</text>
+
+  <rect x="270" y="110" width="260" height="280" rx="8" fill="#112240" stroke="#64ffda" stroke-width="2"/>
+  <text x="400" y="140" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" fill="#64ffda" text-anchor="middle">ESP32 EDGE COMPUTATION</text>
+  <text x="400" y="165" font-family="'Nunito', sans-serif" font-size="11" fill="#ccd6f6" text-anchor="middle">Dual-Core Tensilica LX6 @ 240MHz</text>
+  
+  <rect x="285" y="185" width="230" height="35" rx="4" fill="#0a192f" stroke="#233554"/>
+  <text x="400" y="206" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ccd6f6" text-anchor="middle">Feature Extraction: RMS, Peak, Kurtosis</text>
+  
+  <rect x="285" y="235" width="230" height="45" rx="4" fill="#0a192f" stroke="#64ffda" stroke-width="1.5"/>
+  <text x="400" y="255" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" fill="#64ffda" text-anchor="middle">DECISION TREE CLASSIFIER</text>
+  <text x="400" y="270" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8892b0" text-anchor="middle">Fault Diagnosis in &lt;18ms (INT8)</text>
+
+  <rect x="285" y="295" width="230" height="35" rx="4" fill="#0a192f" stroke="#233554"/>
+  <text x="400" y="316" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ccd6f6" text-anchor="middle">Local Alerts: OLED + Piezo Buzzer</text>
+
+  <rect x="570" y="110" width="180" height="280" rx="8" fill="#112240" stroke="#233554"/>
+  <text x="660" y="140" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold" fill="#ccd6f6" text-anchor="middle">CONNECTIVITY</text>
+  <rect x="585" y="180" width="150" height="60" rx="4" fill="#0a192f" stroke="#64ffda"/>
+  <text x="660" y="205" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" fill="#64ffda" text-anchor="middle">Wi-Fi Telemetry</text>
+  <text x="660" y="222" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8892b0" text-anchor="middle">Blynk IoT Mobile App</text>
+  <rect x="585" y="260" width="150" height="60" rx="4" fill="#0a192f" stroke="#233554"/>
+  <text x="660" y="285" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" fill="#ccd6f6" text-anchor="middle">Fault Log Dashboard</text>
+  <text x="660" y="302" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8892b0" text-anchor="middle">Real-time Telemetry Graph</text>
+</svg>

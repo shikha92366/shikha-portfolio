@@ -1,0 +1,142 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 5480 >>
+stream
+0.39 1.0 0.85 rg
+50 705 512 1.5 re f
+0.14 0.21 0.33 rg
+50 680 512 0.75 re f
+0.14 0.21 0.33 rg
+50 610 512 0.75 re f
+0.14 0.21 0.33 rg
+50 520 512 0.75 re f
+0.14 0.21 0.33 rg
+50 337 512 0.75 re f
+0.14 0.21 0.33 rg
+50 207 512 0.75 re f
+0 0 0 rg
+0.04 0.10 0.18 rg
+BT /F2 20 Tf 50 745 Td (SHIKHA) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 11 Tf 50 728 Td (ECE Engineer | Embedded Systems, Avionics, IoT & PCB Design) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 50 714 Td (Kanpur, India  |  Email: shikha.y0603@gmail.com  |  GitHub: github.com/shikha92366  |  LinkedIn: in/shikha-shikha-30b9aa325) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 12 Tf 50 685 Td (PROFESSIONAL SUMMARY) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9.5 Tf 50 668 Td (ECE undergraduate at PSIT Kanpur specializing in embedded firmware \(C/C++\), avionics hardware, custom PCB design,) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9.5 Tf 50 654 Td (and RF telemetry. Experienced in designing dual-MCU flight computers for sounding rockets, CanSat telemetry, and edge AI) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9.5 Tf 50 640 Td (sensing systems. Winner of 2nd Prize at the IN-SPACe Model Rocketry Competition 2024-25.) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 12 Tf 50 615 Td (EDUCATION) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 10 Tf 50 598 Td (Pranveer Singh Institute of Technology \(PSIT\), Kanpur) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9.5 Tf 450 598 Td (2023 - Present) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9.5 Tf 50 584 Td (B.Tech in Electronics & Communication Engineering  |  Score: 78.6%) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 10 Tf 50 565 Td (Kendriya Vidyalaya Sangathan) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9.5 Tf 450 565 Td (2022 - 2023) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9.5 Tf 50 551 Td (Class XII \(CBSE\): 77%  |  Class X \(CBSE, 2020-21\): 89.2%) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 12 Tf 50 525 Td (ENGINEERING EXPERIENCE) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 10 Tf 50 508 Td (Electrical Testing & Validation Intern  -  Raman Research & Innovation Pvt. Ltd.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 450 508 Td (Mar 2025 - Jun 2025) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 494 Td (- Tested and validated electrical circuits, sensor modules and embedded subsystems for system-level reliability.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 481 Td (- Assisted with PCB assembly, circuit validation, sensor interfacing and hardware debugging using bench oscilloscopes.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 468 Td (- Prepared comprehensive hardware validation reports and technical documentation for production builds.) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 10 Tf 50 445 Td (Avionics & On-Board Computer Engineer  -  PSIT Vyomnauts \(Team Sudarshan\)) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 450 445 Td (2024 - Present) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 431 Td (- Designed and integrated dual-MCU flight computer \(RPi Pico 2 + Arduino Nano 33 BLE\) for rocket Trishul.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 418 Td (- Won 2nd Prize at the national IN-SPACe Model Rocketry Competition 2024-25 for avionics architecture.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 405 Td (- Core member of the IN-SPACe CanSat entry: won Best Design Award and Best Telemetry Data Award.) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 10 Tf 50 382 Td (IoT & Robotics Workshop Trainer  -  College Technical Workshop \(40+ Students\)) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 450 382 Td (Jan 2026) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 368 Td (- Conducted hands-on instruction in microcontroller programming, GPIO, ADC, PWM, and cloud IoT telemetry.) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 12 Tf 50 342 Td (FEATURED PROJECTS & AWARDS) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 10 Tf 50 325 Td (Rocket Avionics System \(Trishul\)  [IN-SPACe 2nd Prize Award]) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 311 Td (- Dual-controller architecture with Raspberry Pi Pico 2 primary MCU & Arduino Nano 33 BLE secondary.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 298 Td (- Integrated BNO085 IMU, BMP390 barometer, NavIC GPS, XBee S3B Pro RF telemetry and Quectel 4G backup.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 285 Td (- Custom 2-layer PCB designed in EasyEDA with MOSFET pyro triggers and isolated 7.4V to 5V/3.3V regulation.) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 10 Tf 50 265 Td (MotorMind AI: Edge AI Motor Health Monitoring) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 251 Td (- ESP32-based vibration \(ADXL345\), temperature \(DS18B20\), current \(ACS712\) and RPM sensor fusion node.) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 60 238 Td (- On-device Decision Tree classifier executing anomaly detection with local OLED and remote Blynk alerts.) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 12 Tf 50 212 Td (TECHNICAL SKILLS & TOOLCHAIN) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 9.5 Tf 50 195 Td (Programming:) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 140 195 Td (Embedded C, C++, Python, Arduino C++) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 9.5 Tf 50 180 Td (Microcontrollers:) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 140 180 Td (STM32, ESP32, Raspberry Pi Pico 2, Arduino Nano 33 BLE Sense Rev 2) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 9.5 Tf 50 165 Td (Protocols & Comms:) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 140 165 Td (UART, SPI, I2C, FreeRTOS \(basics\), LoRa, XBee S3B Pro, 4G LTE, NavIC GPS) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 9.5 Tf 50 150 Td (PCB & Hardware:) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 140 150 Td (EasyEDA, KiCad, Schematic Capture, DRC, BOM Preparation, Soldering, Multimeter) Tj ET
+0.04 0.10 0.18 rg
+BT /F2 9.5 Tf 50 135 Td (Software & Tools:) Tj ET
+0.18 0.22 0.29 rg
+BT /F1 9 Tf 140 135 Td (STM32CubeIDE, MATLAB, Simulink, Multisim, XCTU, Git, GitHub) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000244 00000 n 
+0000000000 00000 n 
+0000000000 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+500
+%%EOF

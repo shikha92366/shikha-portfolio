@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <rect width="800" height="450" fill="#0a192f"/>
+  <text x="400" y="45" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="bold" fill="#64ffda" text-anchor="middle">IN-SPACE CANSAT SENSING &amp; TELEMETRY ARCHITECTURE</text>
+  <text x="400" y="70" font-family="'Nunito', sans-serif" font-size="12" fill="#8892b0" text-anchor="middle">Best Design &amp; Best Telemetry Data Awards • PSIT Vyomnauts</text>
+
+  <rect x="60" y="110" width="180" height="280" rx="8" fill="#112240" stroke="#233554"/>
+  <text x="150" y="140" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" fill="#ccd6f6" text-anchor="middle">ATMOSPHERIC SENSORS</text>
+  <text x="150" y="180" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">BMP280 Barometer</text>
+  <text x="150" y="220" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">LSM9DS1 9-DOF IMU</text>
+  <text x="150" y="260" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">MQ-135 Air Quality</text>
+  <text x="150" y="300" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">NEO-6M GPS Receiver</text>
+  <text x="150" y="340" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64ffda" text-anchor="middle">NTC Temp Probe</text>
+
+  <rect x="300" y="110" width="220" height="280" rx="8" fill="#112240" stroke="#64ffda" stroke-width="2"/>
+  <text x="410" y="140" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold" fill="#64ffda" text-anchor="middle">CANSAT FLIGHT CORE</text>
+  <text x="410" y="165" font-family="'Nunito', sans-serif" font-size="11" fill="#ccd6f6" text-anchor="middle">Arduino Nano 33 BLE Sense</text>
+  <text x="410" y="185" font-family="'JetBrains Mono', monospace" font-size="9" fill="#8892b0" text-anchor="middle">Arm Cortex-M4F @ 64MHz</text>
+  <rect x="320" y="210" width="180" height="35" rx="4" fill="#0a192f" stroke="#233554"/>
+  <text x="410" y="232" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ccd6f6" text-anchor="middle">10Hz Telemetry Packetizing</text>
+  <rect x="320" y="260" width="180" height="35" rx="4" fill="#0a192f" stroke="#233554"/>
+  <text x="410" y="282" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ccd6f6" text-anchor="middle">MicroSD Flight Blackbox (FAT32)</text>
+  <rect x="320" y="310" width="180" height="35" rx="4" fill="#0a192f" stroke="#64ffda"/>
+  <text x="410" y="332" font-family="'JetBrains Mono', monospace" font-size="9" fill="#64ffda" text-anchor="middle">66mm Cylindrical Stack Form</text>
+
+  <rect x="580" y="110" width="160" height="280" rx="8" fill="#112240" stroke="#233554"/>
+  <text x="660" y="140" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold" fill="#ccd6f6" text-anchor="middle">RF TELEMETRY</text>
+  <rect x="595" y="170" width="130" height="60" rx="4" fill="#0a192f" stroke="#64ffda"/>
+  <text x="660" y="195" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" fill="#64ffda" text-anchor="middle">433MHz Radio</text>
+  <text x="660" y="212" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8892b0" text-anchor="middle">FSK Modulation Link</text>
+  <rect x="595" y="250" width="130" height="60" rx="4" fill="#0a192f" stroke="#233554"/>
+  <text x="660" y="275" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" fill="#ccd6f6" text-anchor="middle">Ground Station</text>
+  <text x="660" y="292" font-family="'JetBrains Mono', monospace" font-size="8" fill="#8892b0" text-anchor="middle">Real-time Plotting GCS</text>
+</svg>

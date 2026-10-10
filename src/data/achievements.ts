@@ -1,0 +1,60 @@
+import { Achievement } from '../types';
+
+export const achievements: Achievement[] = [
+  {
+    id: 'inspace-rocketry',
+    title: '2nd Prize, IN-SPACe Model Rocketry Competition',
+    issuer: 'IN-SPACe (Indian National Space Promotion and Authorization Center)',
+    date: '2024-25',
+    type: 'award',
+    description: 'Awarded 2nd Prize for design, integration and flight telemetry performance of the Trishul rocket dual-controller avionics system.',
+  },
+  {
+    id: 'inspace-cansat-design',
+    title: 'Best Design Award, IN-SPACe CanSat Student Competition',
+    issuer: 'IN-SPACe',
+    date: '2024-25',
+    type: 'award',
+    description: 'Recognized for optimal hardware layout, sensor redundancy, and structural modularity in the 66mm canister form-factor.',
+  },
+  {
+    id: 'inspace-cansat-telemetry',
+    title: 'Best Telemetry Data Award, IN-SPACe CanSat Student Competition',
+    issuer: 'IN-SPACe',
+    date: '2024-25',
+    type: 'award',
+    description: 'Achieved unbroken, ultra-clean 10Hz downlink of barometric, 9-DOF inertial, GPS, and gas sensor telemetry during test descent.',
+  },
+  {
+    id: 'asi-rocketry',
+    title: 'ASI Model Rocketry Competition',
+    issuer: 'ISRO / Astronautical Society of India',
+    date: 'Oct 2025',
+    type: 'competition',
+    description: 'Competed with Team Sudarshan, deploying high-reliability telemetry and safe pyro-separation channels.',
+  },
+  {
+    id: 'matlab-onramp',
+    title: 'MATLAB Onramp Certification',
+    issuer: 'MathWorks',
+    date: 'Aug 2026',
+    type: 'certification',
+    description: 'Certified in numerical computing, matrix calculations, data analysis, and algorithm development with MATLAB.',
+  },
+  {
+    id: '5g6g-workshop',
+    title: '5G/6G Technical Workshop',
+    issuer: 'SIIC, IIT Kanpur',
+    date: 'Jun 2026',
+    type: 'certification',
+    description: 'Intensive hands-on workshop covering wireless communication architectures, RF frontends, and future telecommunications protocols.',
+  },
+  {
+    id: 'iot-trainer',
+    title: 'IoT & Robotics Workshop Trainer (40+ students)',
+    issuer: 'College workshop',
+    date: 'Jan 2026',
+    type: 'competition',
+    description: 'Mentored and instructed 40+ engineering students in hands-on microcontroller interfacing, sensor circuits, and IoT cloud data logging.',
+  },
+];

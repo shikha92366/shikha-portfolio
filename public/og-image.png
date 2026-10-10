@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#0a192f"/>
+  <text x="600" y="260" font-family="'Nunito', sans-serif" font-size="64" font-weight="bold" fill="#ccd6f6" text-anchor="middle">hi, <tspan fill="#64ffda">shikha</tspan> here.</text>
+  <text x="600" y="340" font-family="'JetBrains Mono', monospace" font-size="28" fill="#64ffda" text-anchor="middle">ECE ENGINEER • EMBEDDED SYSTEMS &amp; AVIONICS</text>
+  <text x="600" y="400" font-family="'Nunito', sans-serif" font-size="22" fill="#8892b0" text-anchor="middle">Flight Computers • EasyEDA PCBs • RF Telemetry • 2nd Prize IN-SPACe Rocketry</text>
+</svg>

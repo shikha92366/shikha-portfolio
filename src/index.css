@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0a192f;
+    --bg-card: #112240;
+    --border-color: #233554;
+    --text-heading: #ccd6f6;
+    --text-body: #8892b0;
+    --accent: #64ffda;
+    --accent-tint: rgba(100, 255, 218, 0.1);
+
+    --font-sans: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-body);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-heading);
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Subtle background grid pattern for circuit aesthetic */
+.bg-circuit-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(35, 53, 84, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 53, 84, 0.25) 1px, transparent 1px);
+}
+
+/* Card surfaces */
+.panel-card {
+  background-color: #112240;
+  border: 1px solid #233554;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panel-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(100, 255, 218, 0.4);
+  box-shadow: 0 12px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+/* Accent outlines & buttons */
+.btn-mint-outline {
+  border: 1px solid #64ffda;
+  color: #64ffda;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-mint-outline:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #233554;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64ffda;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

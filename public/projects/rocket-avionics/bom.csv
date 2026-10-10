@@ -1,0 +1,16 @@
+Item,Designator,Component Description,Package/Footprint,Quantity,Subsystem
+1,U1,Raspberry Pi Pico 2 (Dual Arm Cortex-M33 / Hazard3 RISC-V),DIP-40 Header,1,Primary Flight Computer
+2,U2,Arduino Nano 33 BLE Sense Rev 2 (Cortex-M4F + IMU/Temp),DIP-30 Header,1,Secondary Safety Controller
+3,U3,XBee S3B Pro 900MHz RF Telemetry Transceiver,Through-Hole 20-Pin,1,RF Telemetry (Long-Range)
+4,U4,Quectel EC200U 4G LTE Cellular Modem Module,Breakout Header,1,Backup GSM/4G Telemetry
+5,U5,BNO085 9-DOF High-Precision IMU,QFN-28 / Breakout,1,Attitude & Orientation
+6,U6,BMP390 Precision Barometric Pressure / Altitude Sensor,LGA-10,1,Apogee & Altimetry
+7,U7,INA219 High-Side DC Current & Power Monitor,SOT-23-8,1,Power Subsystem Profiling
+8,U8,MAX31856 Precision Thermocouple to Digital Converter,TSSOP-14,1,Propellant Case Temp
+9,U9,DS3231 Extremely Accurate I2C Real-Time Clock (RTC),SOIC-16,1,Mission Timestamp Clock
+10,U10,NavIC / GPS Multi-Constellation Satellite Receiver,SMD/Header,1,Satellite Position Tracking
+11,Q1-Q2,IRLML6344TRPBF Logic-Level N-Channel MOSFET (30V/5A),SOT-23,2,Pyro Channel Deployment
+12,D1-D2,SS34 Schottky Flyback Diodes (3A 40V),SMA,2,Inductive Spike Protection
+13,U11,TPS54331 Step-Down DC-DC Converter (7.4V to 5.0V),SOIC-8,1,Main 5V Power Rail
+14,U12,AMS1117-3.3 Linear Voltage Regulator,SOT-223,1,Clean 3.3V Sensor Rail
+15,J1,MicroSD Card Push-Push Socket Module,SMD,1,Blackbox Flight Logging
