@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "allowSyntheticDefaultImports": true },
+  "include": ["scripts/**/*.ts", "src/data/**/*.ts", "src/types/**/*.ts"]
+}

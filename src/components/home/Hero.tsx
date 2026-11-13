@@ -1,61 +1,24 @@
-import { Mail, ArrowDown } from 'lucide-react';
-import { profile } from '../../data/profile';
-import { AsciiPortrait } from './AsciiPortrait';
+import { ArrowDown, ArrowUpRight, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useProfile, useProjects, useAchievements } from '../../hooks/useSanityData';
+import { ContentStatus } from '../layout/ContentStatus';
+import { interfaceCopy as copy } from '../../data/interface';
 
 export function Hero() {
-  const scrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const contactElem = document.getElementById('contact');
-    if (contactElem) {
-      contactElem.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  return (
-    <section id="hero" className="min-h-[85vh] flex items-center justify-center py-12 sm:py-20">
-      <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
-        {/* Left Column: Animated ASCII Dot-matrix Portrait */}
-        <div className="md:col-span-5 flex justify-center order-2 md:order-1">
-          <AsciiPortrait />
+  const content = useProfile(); const { data: profile } = content;
+  const { data: projects } = useProjects(); const { data: achievements } = useAchievements();
+  const spotlight = projects.find(p => p.featured) || projects[0];
+  return <section id="hero" className="editorial-hero">
+    <ContentStatus loading={content.isLoading} error={content.contentError}>
+      <div className="hero-topline"><span className="eyebrow"><span className="tiny-square"/>{copy.heroLabel}</span><span className="location"><MapPin size={13}/>{profile.location}</span></div>
+      <div className="hero-grid">
+        <div className="hero-copy"><p className="hero-greeting">{profile.greeting}</p><h1>{profile.name}<span>.</span></h1><h2>{profile.title}</h2><p className="hero-intro">{profile.intro}</p>
+          <div className="hero-actions"><Link to="/#work" className="primary-link">{copy.viewWork}<ArrowDown size={17}/></Link><Link to="/resume" className="text-link">{copy.resume}<ArrowUpRight size={17}/></Link></div>
         </div>
-
-        {/* Right Column: Conversational Greeting, Intro, and CTA */}
-        <div className="md:col-span-7 flex flex-col justify-center order-1 md:order-2 space-y-6">
-          <div className="space-y-3">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#ccd6f6] leading-tight">
-              hi, <span className="text-[#64ffda]">{profile.name.toLowerCase()}</span> here.
-            </h1>
-            <p className="text-lg sm:text-xl font-medium text-[#ccd6f6]/90">
-              {profile.title}
-            </p>
-          </div>
-
-          <p className="text-base sm:text-lg text-[#8892b0] leading-relaxed max-w-xl">
-            {profile.intro}
-          </p>
-
-          <div className="pt-2 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
-              onClick={scrollToContact}
-              className="btn-mint-outline px-7 py-3 rounded text-sm font-mono tracking-wide inline-flex items-center gap-2.5 group cursor-pointer"
-            >
-              <Mail className="w-4 h-4 text-[#64ffda] group-hover:scale-110 transition-transform" />
-              <span>Say hi!</span>
-            </a>
-
-            <a
-              href="#about"
-              className="text-xs font-mono text-[#8892b0] hover:text-[#64ffda] inline-flex items-center gap-1.5 transition-colors cursor-pointer py-2 px-3"
-            >
-              <span>Explore portfolio</span>
-              <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
-            </a>
-          </div>
-        </div>
+        {profile.photo ? <figure className="hero-visual"><img src={profile.photo} alt={profile.photoAlt || profile.name} width={600} height={620}/><figcaption><span>{profile.name}</span><span>{profile.location}</span></figcaption></figure> : spotlight && <Link to={`/projects/${spotlight.slug}`} className="hero-visual" aria-label={`View ${spotlight.title}`}><div className="visual-label"><span>{copy.projectLabel}</span><span>01 / {String(projects.length).padStart(2,'0')}</span></div><img src={spotlight.coverImage} alt={spotlight.coverImageAlt || spotlight.title} width={600} height={620}/><div className="visual-caption"><span>{spotlight.title}</span><span className="circle-arrow"><ArrowUpRight size={23}/></span></div></Link>}
       </div>
-    </section>
-  );
+      <div className="hero-bottom"><div><strong>{String(projects.length).padStart(2,'0')}</strong><span>Projects documented</span></div><div><strong>{String(achievements.filter(a=>a.type==='award').length).padStart(2,'0')}</strong><span>Awards & recognition</span></div><div className="hero-disciplines">{profile.currentTechnologies.slice(0,4).map(t=><span key={t}>{t}</span>)}</div></div>
+    </ContentStatus>
+  </section>;
 }
-
 export default Hero;

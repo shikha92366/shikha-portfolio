@@ -1,6 +1,7 @@
+import { ContentStatus } from '../layout/ContentStatus';
 import { useContactForm } from '../../hooks/useContactForm';
 import { SectionHeading } from '../layout/SectionHeading';
-import { profile } from '../../data/profile';
+import { useProfile } from '../../hooks/useSanityData';
 import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Github, Linkedin, Shield } from 'lucide-react';
 
 interface ContactFormProps {
@@ -8,6 +9,8 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ standalone = false }: ContactFormProps) {
+  const content = useProfile();
+  const { data: profile } = content;
   const {
     formData,
     errors,
@@ -19,59 +22,60 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
   } = useContactForm();
 
   return (
+    <ContentStatus loading={content.isLoading} error={content.contentError}>
     <section id="contact" className={standalone ? 'py-4' : 'py-16 sm:py-24'}>
       <SectionHeading title={standalone ? "send a message" : "contact"} />
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         {/* Left: Contact Info & Channels */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="p-6 sm:p-8 rounded-xl bg-[#112240] border border-[#233554] space-y-6">
+          <div className="p-6 sm:p-8 rounded-xl bg-[#101722] border border-[#263141] space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-[#ccd6f6]">
+              <h3 className="text-xl font-bold text-[#eef3fb]">
                 Get in Touch
               </h3>
-              <p className="text-sm text-[#8892b0] mt-2 leading-relaxed">
+              <p className="text-sm text-[#9ba7b8] mt-2 leading-relaxed">
                 Whether you have a question about embedded firmware, avionics telemetry, PCB design, or just want to say hi, my inbox is always open.
               </p>
             </div>
 
             <div className="space-y-4 text-sm">
-              <div className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#0a192f] border border-[#233554]">
-                <div className="p-2 rounded bg-[#112240] text-[#64ffda] border border-[#233554]">
+              <div className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#080c12] border border-[#263141]">
+                <div className="p-2 rounded bg-[#101722] text-[#83b4ff] border border-[#263141]">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[#8892b0] font-mono text-[11px] block uppercase">
+                  <span className="text-[#9ba7b8] font-mono text-[11px] block uppercase">
                     Email
                   </span>
                   <a
                     href={`mailto:${profile.email}`}
-                    className="text-[#ccd6f6] font-semibold hover:text-[#64ffda] transition-colors"
+                    className="text-[#eef3fb] font-semibold hover:text-[#83b4ff] transition-colors"
                   >
                     {profile.email}
                   </a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#0a192f] border border-[#233554]">
-                <div className="p-2 rounded bg-[#112240] text-[#64ffda] border border-[#233554]">
+              <div className="flex items-start gap-3.5 p-3.5 rounded-lg bg-[#080c12] border border-[#263141]">
+                <div className="p-2 rounded bg-[#101722] text-[#83b4ff] border border-[#263141]">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <span className="text-[#8892b0] font-mono text-[11px] block uppercase">
+                  <span className="text-[#9ba7b8] font-mono text-[11px] block uppercase">
                     Location
                   </span>
-                  <span className="text-[#ccd6f6] font-semibold">{profile.location}</span>
+                  <span className="text-[#eef3fb] font-semibold">{profile.location}</span>
                 </div>
               </div>
             </div>
 
-            <div className="pt-2 flex items-center space-x-3 text-[#ccd6f6]">
+            <div className="pt-2 flex items-center space-x-3 text-[#eef3fb]">
               <a
                 href={profile.socials.find((s) => s.label === 'GitHub')?.url || 'https://github.com/shikha92366'}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded border border-[#233554] hover:border-[#64ffda] hover:text-[#64ffda] bg-[#0a192f] transition-all"
+                className="p-2 rounded border border-[#263141] hover:border-[#83b4ff] hover:text-[#83b4ff] bg-[#080c12] transition-all"
                 title="GitHub"
               >
                 <Github className="w-4 h-4" />
@@ -80,15 +84,15 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                 href={profile.socials.find((s) => s.label === 'LinkedIn')?.url || 'https://linkedin.com/in/shikha-shikha-30b9aa325'}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded border border-[#233554] hover:border-[#64ffda] hover:text-[#64ffda] bg-[#0a192f] transition-all"
+                className="p-2 rounded border border-[#263141] hover:border-[#83b4ff] hover:text-[#83b4ff] bg-[#080c12] transition-all"
                 title="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
 
-            <div className="p-3.5 rounded-lg bg-[#0a192f] border border-[#233554] text-[11px] font-mono text-[#8892b0] space-y-1">
-              <div className="text-[#64ffda] font-semibold flex items-center gap-1.5">
+            <div className="p-3.5 rounded-lg bg-[#080c12] border border-[#263141] text-[11px] font-mono text-[#9ba7b8] space-y-1">
+              <div className="text-[#83b4ff] font-semibold flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5" />
                 <span>SPAM PROTECTION ACTIVE</span>
               </div>
@@ -101,14 +105,14 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
 
         {/* Right: Contact Form */}
         <div className="lg:col-span-7">
-          <div className="p-6 sm:p-8 rounded-xl bg-[#112240] border border-[#233554]">
+          <div className="p-6 sm:p-8 rounded-xl bg-[#101722] border border-[#263141]">
             {status === 'success' ? (
               <div className="text-center py-10 space-y-4">
-                <div className="w-14 h-14 rounded-full bg-[#64ffda]/10 text-[#64ffda] border border-[#64ffda]/40 flex items-center justify-center mx-auto">
+                <div className="w-14 h-14 rounded-full bg-[#83b4ff]/10 text-[#83b4ff] border border-[#83b4ff]/40 flex items-center justify-center mx-auto">
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold text-[#ccd6f6]">Message Sent!</h3>
-                <p className="text-sm text-[#8892b0] max-w-md mx-auto leading-relaxed">
+                <h3 className="text-xl font-bold text-[#eef3fb]">Message Sent!</h3>
+                <p className="text-sm text-[#9ba7b8] max-w-md mx-auto leading-relaxed">
                   {serverMessage}
                 </p>
                 <div className="pt-3">
@@ -145,7 +149,7 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-mono text-[#ccd6f6] mb-1.5">
+                    <label htmlFor="name" className="block text-xs font-mono text-[#eef3fb] mb-1.5">
                       Name *
                     </label>
                     <input
@@ -156,8 +160,8 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                       value={formData.name}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
-                      className={`w-full px-3.5 py-2.5 rounded bg-[#0a192f] border text-sm text-[#ccd6f6] placeholder-[#8892b0]/50 focus:outline-none focus:border-[#64ffda] transition-colors ${
-                        errors.name ? 'border-rose-500' : 'border-[#233554]'
+                      className={`w-full px-3.5 py-2.5 rounded bg-[#080c12] border text-sm text-[#eef3fb] placeholder-[#9ba7b8]/50 focus:outline-none focus:border-[#83b4ff] transition-colors ${
+                        errors.name ? 'border-rose-500' : 'border-[#263141]'
                       }`}
                     />
                     {errors.name && (
@@ -166,7 +170,7 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-mono text-[#ccd6f6] mb-1.5">
+                    <label htmlFor="email" className="block text-xs font-mono text-[#eef3fb] mb-1.5">
                       Email *
                     </label>
                     <input
@@ -177,8 +181,8 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                       value={formData.email}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
-                      className={`w-full px-3.5 py-2.5 rounded bg-[#0a192f] border text-sm text-[#ccd6f6] placeholder-[#8892b0]/50 focus:outline-none focus:border-[#64ffda] transition-colors ${
-                        errors.email ? 'border-rose-500' : 'border-[#233554]'
+                      className={`w-full px-3.5 py-2.5 rounded bg-[#080c12] border text-sm text-[#eef3fb] placeholder-[#9ba7b8]/50 focus:outline-none focus:border-[#83b4ff] transition-colors ${
+                        errors.email ? 'border-rose-500' : 'border-[#263141]'
                       }`}
                     />
                     {errors.email && (
@@ -188,7 +192,7 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-xs font-mono text-[#ccd6f6] mb-1.5">
+                  <label htmlFor="subject" className="block text-xs font-mono text-[#eef3fb] mb-1.5">
                     Subject *
                   </label>
                   <input
@@ -199,8 +203,8 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                     value={formData.subject}
                     onChange={handleChange}
                     disabled={status === 'submitting'}
-                    className={`w-full px-3.5 py-2.5 rounded bg-[#0a192f] border text-sm text-[#ccd6f6] placeholder-[#8892b0]/50 focus:outline-none focus:border-[#64ffda] transition-colors ${
-                      errors.subject ? 'border-rose-500' : 'border-[#233554]'
+                    className={`w-full px-3.5 py-2.5 rounded bg-[#080c12] border text-sm text-[#eef3fb] placeholder-[#9ba7b8]/50 focus:outline-none focus:border-[#83b4ff] transition-colors ${
+                      errors.subject ? 'border-rose-500' : 'border-[#263141]'
                     }`}
                   />
                   {errors.subject && (
@@ -209,7 +213,7 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-mono text-[#ccd6f6] mb-1.5">
+                  <label htmlFor="message" className="block text-xs font-mono text-[#eef3fb] mb-1.5">
                     Message *
                   </label>
                   <textarea
@@ -220,8 +224,8 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                     value={formData.message}
                     onChange={handleChange}
                     disabled={status === 'submitting'}
-                    className={`w-full px-3.5 py-2.5 rounded bg-[#0a192f] border text-sm text-[#ccd6f6] placeholder-[#8892b0]/50 focus:outline-none focus:border-[#64ffda] transition-colors resize-none ${
-                      errors.message ? 'border-rose-500' : 'border-[#233554]'
+                    className={`w-full px-3.5 py-2.5 rounded bg-[#080c12] border text-sm text-[#eef3fb] placeholder-[#9ba7b8]/50 focus:outline-none focus:border-[#83b4ff] transition-colors resize-none ${
+                      errors.message ? 'border-rose-500' : 'border-[#263141]'
                     }`}
                   />
                   {errors.message && (
@@ -230,7 +234,7 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
                 </div>
 
                 <div className="pt-2 flex items-center justify-between">
-                  <span className="text-[11px] font-mono text-[#8892b0]/70">
+                  <span className="text-[11px] font-mono text-[#9ba7b8]/70">
                     * Required fields
                   </span>
 
@@ -255,6 +259,7 @@ export function ContactForm({ standalone = false }: ContactFormProps) {
         </div>
       </div>
     </section>
+    </ContentStatus>
   );
 }
 

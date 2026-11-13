@@ -1,4 +1,8 @@
+import type { TypedObject } from '@portabletext/types';
+
 export interface Profile {
+  photo?: string;
+  photoAlt?: string;
   name: string;
   greeting: string; // e.g. "hi, [name] here."
   title: string; // ECE Engineer | Embedded, IoT, AI/ML, PCB
@@ -41,8 +45,11 @@ export interface Project {
   awards?: string[];
   team?: string; // e.g. "Team Sudarshan (6 members)"
   coverImage: string;
+  coverImageAlt?: string;
+  architectureAlt?: string;
+  galleryMetadata?: { url: string; alt: string; caption?: string }[];
   // --- documentation page content ---
-  overview: string; // problem + goal (markdown)
+  overview: string | TypedObject[]; // problem + goal (markdown string or portable text blocks)
   architecture?: string; // block diagram image path or mermaid source
   hardwareDetails?: { // for hardware projects
     mcu?: string;
@@ -50,7 +57,7 @@ export interface Project {
     communication?: string[]; // I2C, SPI, UART, MQTT, LoRa, BLE...
     pcbSpecs?: string; // layers, tool (KiCad/Altium), dimensions
   };
-  implementation: string; // how it was built (markdown)
+  implementation: string | TypedObject[]; // how it was built (markdown string or portable text blocks)
   results: string[]; // measurable outcomes
   challenges?: string[]; // problems hit + how solved
   gallery: string[]; // photos, PCB renders, screenshots

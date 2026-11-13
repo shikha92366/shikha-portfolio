@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { ContactSchema, ContactFormData } from '../lib/validations/contact';
-import { profile } from '../data/profile';
+import { useProfile } from './useSanityData';
 import confetti from 'canvas-confetti';
 
 export function useContactForm() {
+  const { data: profile } = useProfile();
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',

@@ -1,12 +1,15 @@
+import { ContentStatus } from '../layout/ContentStatus';
 import { Link } from 'react-router-dom';
 import { SectionHeading } from '../layout/SectionHeading';
 import { ProjectCard } from '../projects/ProjectCard';
-import { projects } from '../../data/projects';
-import { profile } from '../../data/profile';
+import { useProjects, useProfile } from '../../hooks/useSanityData';
 import { ArrowRight } from 'lucide-react';
 
 export function HardwareSection() {
-  const label = profile.sectionLabels.hardware; // 'avionics & pcb'
+  const { data: profile } = useProfile();
+  const content = useProjects();
+  const { data: projects } = content;
+  const label = profile?.sectionLabels?.hardware || 'avionics & pcb';
 
   // Hardware projects (Trishul Rocket Avionics, CanSat, etc.)
   const hardwareProjects = projects.filter(
@@ -16,7 +19,7 @@ export function HardwareSection() {
   const viewAllAction = (
     <Link
       to="/hardware"
-      className="text-xs sm:text-sm font-mono text-[#64ffda] hover:underline inline-flex items-center gap-1 group"
+      className="text-xs sm:text-sm font-mono text-[#83b4ff] hover:underline inline-flex items-center gap-1 group"
     >
       <span>View all projects</span>
       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -24,6 +27,7 @@ export function HardwareSection() {
   );
 
   return (
+    <ContentStatus loading={content.isLoading} error={content.contentError} empty={content.data.length === 0}>
     <section id="hardware" className="py-16 sm:py-24">
       <SectionHeading title={label} action={viewAllAction} />
 
@@ -34,6 +38,7 @@ export function HardwareSection() {
         ))}
       </div>
     </section>
+    </ContentStatus>
   );
 }
 

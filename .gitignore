@@ -6,3 +6,6 @@ dist/
 *.local
 
 *.tsbuildinfo
+.sanity/
+studio/dist/
+studio/.sanity/

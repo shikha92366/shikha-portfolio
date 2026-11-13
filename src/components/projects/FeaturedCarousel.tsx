@@ -12,7 +12,7 @@ export function FeaturedCarousel({ projects }: FeaturedCarouselProps) {
 
   if (!projects || projects.length === 0) return null;
 
-  const currentProject = projects[currentIndex];
+  const currentProject = projects[Math.min(currentIndex, projects.length - 1)];
 
   const handlePrev = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -25,9 +25,9 @@ export function FeaturedCarousel({ projects }: FeaturedCarouselProps) {
   };
 
   return (
-    <div className="relative group w-full rounded-2xl overflow-hidden border border-[#233554] bg-[#112240] shadow-2xl mb-10">
+    <div className="relative group w-full rounded-2xl overflow-hidden border border-[#263141] bg-[#101722] shadow-2xl mb-10">
       {/* Visual Container */}
-      <div className="relative w-full h-[320px] sm:h-[400px] bg-[#0a192f] overflow-hidden flex items-center justify-center">
+      <div className="relative w-full h-[320px] sm:h-[400px] bg-[#080c12] overflow-hidden flex items-center justify-center">
         {/* Background circuit grid */}
         <div className="absolute inset-0 bg-circuit-grid opacity-25" />
 
@@ -45,28 +45,28 @@ export function FeaturedCarousel({ projects }: FeaturedCarouselProps) {
         ) : null}
 
         {/* Dark gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a192f] via-[#0a192f]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080c12] via-[#080c12]/80 to-transparent" />
 
         {/* Content Overlay */}
         <div className="absolute inset-0 p-6 sm:p-10 flex flex-col justify-end text-center items-center z-10 max-w-3xl mx-auto">
           {currentProject.status && (
-            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-[#64ffda]/10 text-[#64ffda] border border-[#64ffda]/30 mb-3">
+            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider bg-[#83b4ff]/10 text-[#83b4ff] border border-[#83b4ff]/30 mb-3">
               {currentProject.status === 'completed' ? 'FEATURED CASE STUDY' : 'ACTIVE DEVELOPMENT'}
             </span>
           )}
 
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#ccd6f6] hover:text-[#64ffda] transition-colors mb-3">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#eef3fb] hover:text-[#83b4ff] transition-colors mb-3">
             <Link to={`/projects/${currentProject.slug}`}>{currentProject.title}</Link>
           </h3>
 
-          <p className="text-sm sm:text-base text-[#8892b0] max-w-xl mb-4 line-clamp-2">
+          <p className="text-sm sm:text-base text-[#9ba7b8] max-w-xl mb-4 line-clamp-2">
             {currentProject.shortDescription}
           </p>
 
           {/* Uppercase Tech Tags */}
           <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 mb-5">
             {currentProject.techStack.map((tech) => (
-              <span key={tech} className="text-xs font-mono uppercase tracking-wider text-[#64ffda]/90">
+              <span key={tech} className="text-xs font-mono uppercase tracking-wider text-[#83b4ff]/90">
                 {tech}
               </span>
             ))}
@@ -87,7 +87,7 @@ export function FeaturedCarousel({ projects }: FeaturedCarouselProps) {
                 href={currentProject.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded text-[#ccd6f6] hover:text-[#64ffda] hover:bg-[#233554]/40 transition-colors"
+                className="p-2 rounded text-[#eef3fb] hover:text-[#83b4ff] hover:bg-[#263141]/40 transition-colors"
                 title="View on GitHub"
               >
                 <Github className="w-4 h-4" />
@@ -99,7 +99,7 @@ export function FeaturedCarousel({ projects }: FeaturedCarouselProps) {
                 href={currentProject.demoUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 rounded text-[#ccd6f6] hover:text-[#64ffda] hover:bg-[#233554]/40 transition-colors"
+                className="p-2 rounded text-[#eef3fb] hover:text-[#83b4ff] hover:bg-[#263141]/40 transition-colors"
                 title="Live Demo"
               >
                 <ExternalLink className="w-4 h-4" />
@@ -114,14 +114,14 @@ export function FeaturedCarousel({ projects }: FeaturedCarouselProps) {
             <button
               onClick={handlePrev}
               aria-label="Previous Project"
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#0a192f]/70 border border-[#233554] text-[#ccd6f6] hover:text-[#64ffda] hover:border-[#64ffda]/60 transition-all z-20 cursor-pointer"
+              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#080c12]/70 border border-[#263141] text-[#eef3fb] hover:text-[#83b4ff] hover:border-[#83b4ff]/60 transition-all z-20 cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={handleNext}
               aria-label="Next Project"
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#0a192f]/70 border border-[#233554] text-[#ccd6f6] hover:text-[#64ffda] hover:border-[#64ffda]/60 transition-all z-20 cursor-pointer"
+              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#080c12]/70 border border-[#263141] text-[#eef3fb] hover:text-[#83b4ff] hover:border-[#83b4ff]/60 transition-all z-20 cursor-pointer"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -137,7 +137,7 @@ export function FeaturedCarousel({ projects }: FeaturedCarouselProps) {
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`h-1 transition-all rounded cursor-pointer ${
-                  idx === currentIndex ? 'w-8 bg-[#64ffda]' : 'w-4 bg-[#233554] hover:bg-[#8892b0]'
+                  idx === currentIndex ? 'w-8 bg-[#83b4ff]' : 'w-4 bg-[#263141] hover:bg-[#9ba7b8]'
                 }`}
               />
             ))}

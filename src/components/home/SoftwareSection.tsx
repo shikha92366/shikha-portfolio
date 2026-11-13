@@ -1,13 +1,16 @@
+import { ContentStatus } from '../layout/ContentStatus';
 import { Link } from 'react-router-dom';
 import { SectionHeading } from '../layout/SectionHeading';
 import { FeaturedCarousel } from '../projects/FeaturedCarousel';
 import { ProjectCard } from '../projects/ProjectCard';
-import { projects } from '../../data/projects';
-import { profile } from '../../data/profile';
+import { useProjects, useProfile } from '../../hooks/useSanityData';
 import { ArrowRight } from 'lucide-react';
 
 export function SoftwareSection() {
-  const label = profile.sectionLabels.software; // 'embedded & ai'
+  const { data: profile } = useProfile();
+  const content = useProjects();
+  const { data: projects } = content;
+  const label = profile?.sectionLabels?.software || 'embedded & ai';
 
   // Filter software/AI-ML/embedded projects
   const softwareProjects = projects.filter(
@@ -22,7 +25,7 @@ export function SoftwareSection() {
   const viewAllAction = (
     <Link
       to="/software"
-      className="text-xs sm:text-sm font-mono text-[#64ffda] hover:underline inline-flex items-center gap-1 group"
+      className="text-xs sm:text-sm font-mono text-[#83b4ff] hover:underline inline-flex items-center gap-1 group"
     >
       <span>View all projects</span>
       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
@@ -30,6 +33,7 @@ export function SoftwareSection() {
   );
 
   return (
+    <ContentStatus loading={content.isLoading} error={content.contentError} empty={content.data.length === 0}>
     <section id="software" className="py-16 sm:py-24">
       <SectionHeading title={label} action={viewAllAction} />
 
@@ -43,6 +47,7 @@ export function SoftwareSection() {
         ))}
       </div>
     </section>
+    </ContentStatus>
   );
 }
 

@@ -11,14 +11,14 @@ export function ProjectDocs({ documents }: ProjectDocsProps) {
   const getDocIcon = (type: string) => {
     switch (type) {
       case 'pdf':
-        return <FileText className="w-5 h-5 text-[#64ffda]" />;
+        return <FileText className="w-5 h-5 text-[#83b4ff]" />;
       case 'image':
-        return <ImageIcon className="w-5 h-5 text-[#64ffda]" />;
+        return <ImageIcon className="w-5 h-5 text-[#83b4ff]" />;
       case 'csv':
-        return <FileSpreadsheet className="w-5 h-5 text-[#64ffda]" />;
+        return <FileSpreadsheet className="w-5 h-5 text-[#83b4ff]" />;
       case 'link':
       default:
-        return <LinkIcon className="w-5 h-5 text-[#64ffda]" />;
+        return <LinkIcon className="w-5 h-5 text-[#83b4ff]" />;
     }
   };
 
@@ -31,17 +31,17 @@ export function ProjectDocs({ documents }: ProjectDocsProps) {
           return (
             <div
               key={idx}
-              className="p-4 rounded-xl border border-[#233554] bg-[#112240] hover:border-[#64ffda]/50 transition-all flex items-center justify-between gap-3 group"
+              className="p-4 rounded-xl border border-[#263141] bg-[#101722] hover:border-[#83b4ff]/50 transition-all flex items-center justify-between gap-3 group"
             >
               <div className="flex items-center gap-3.5 min-w-0">
-                <div className="p-2.5 rounded-lg bg-[#0a192f] border border-[#233554] text-[#64ffda] shrink-0">
+                <div className="p-2.5 rounded-lg bg-[#080c12] border border-[#263141] text-[#83b4ff] shrink-0">
                   {getDocIcon(doc.type)}
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-sm font-semibold text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors truncate">
+                  <h4 className="text-sm font-semibold text-[#eef3fb] group-hover:text-[#83b4ff] transition-colors truncate">
                     {doc.label}
                   </h4>
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#8892b0]">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-[#9ba7b8]">
                     {doc.type} document
                   </span>
                 </div>
@@ -52,7 +52,7 @@ export function ProjectDocs({ documents }: ProjectDocsProps) {
                   <a
                     href={doc.url}
                     download
-                    className="p-2 rounded border border-[#233554] bg-[#0a192f] text-[#8892b0] hover:text-[#64ffda] hover:border-[#64ffda] transition-all inline-flex items-center gap-1.5 text-xs font-mono"
+                    className="p-2 rounded border border-[#263141] bg-[#080c12] text-[#9ba7b8] hover:text-[#83b4ff] hover:border-[#83b4ff] transition-all inline-flex items-center gap-1.5 text-xs font-mono"
                     title="Download File"
                   >
                     <Download className="w-3.5 h-3.5" />
@@ -63,7 +63,7 @@ export function ProjectDocs({ documents }: ProjectDocsProps) {
                     href={doc.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded border border-[#233554] bg-[#0a192f] text-[#8892b0] hover:text-[#64ffda] hover:border-[#64ffda] transition-all inline-flex items-center gap-1.5 text-xs font-mono"
+                    className="p-2 rounded border border-[#263141] bg-[#080c12] text-[#9ba7b8] hover:text-[#83b4ff] hover:border-[#83b4ff] transition-all inline-flex items-center gap-1.5 text-xs font-mono"
                     title="Open Link"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />

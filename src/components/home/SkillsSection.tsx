@@ -1,7 +1,10 @@
+import { ContentStatus } from '../layout/ContentStatus';
 import { SectionHeading } from '../layout/SectionHeading';
-import { skills } from '../../data/skills';
+import { useSkills } from '../../hooks/useSanityData';
 
 export function SkillsSection() {
+  const content = useSkills();
+  const { data: skills } = content;
   // Group skills logically
   const programmingSkills = skills.filter((s) => s.category === 'software');
   const embeddedSkills = skills.filter(
@@ -17,6 +20,7 @@ export function SkillsSection() {
   const toolsAndLab = skills.filter((s) => s.category === 'tools');
 
   const skillGroups = [
+    ...(skills.some(s => s.category === 'ai-ml') ? [{ title: 'AI / Machine Learning', items: skills.filter(s => s.category === 'ai-ml') }] : []),
     { title: 'Programming & Firmware', items: programmingSkills },
     { title: 'Embedded Protocols & RTOS', items: embeddedSkills },
     { title: 'Target Microcontrollers & Boards', items: boards },
@@ -26,6 +30,7 @@ export function SkillsSection() {
   ];
 
   return (
+    <ContentStatus loading={content.isLoading} error={content.contentError} empty={content.data.length === 0}>
     <section id="skills" className="py-16 sm:py-24">
       <SectionHeading title="skills" />
 
@@ -33,17 +38,17 @@ export function SkillsSection() {
         {skillGroups.map((group) => (
           <div
             key={group.title}
-            className="panel-card rounded-xl p-6 border border-[#233554] bg-[#112240] flex flex-col"
+            className="panel-card rounded-xl p-6 border border-[#263141] bg-[#101722] flex flex-col"
           >
-            <h3 className="text-sm font-bold text-[#ccd6f6] uppercase tracking-wider font-mono mb-4 pb-2 border-b border-[#233554]/60 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#64ffda]" />
+            <h3 className="text-sm font-bold text-[#eef3fb] uppercase tracking-wider font-mono mb-4 pb-2 border-b border-[#263141]/60 flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#83b4ff]" />
               <span>{group.title}</span>
             </h3>
 
-            <ul className="space-y-2 text-sm font-mono text-[#8892b0]">
+            <ul className="space-y-2 text-sm font-mono text-[#9ba7b8]">
               {group.items.map((skill) => (
-                <li key={skill.name} className="flex items-center gap-2.5 text-[#ccd6f6]/90 hover:text-[#64ffda] transition-colors">
-                  <span className="text-[#64ffda] text-xs">▹</span>
+                <li key={skill.name} className="flex items-center gap-2.5 text-[#eef3fb]/90 hover:text-[#83b4ff] transition-colors">
+                  <span className="text-[#83b4ff] text-xs">▹</span>
                   <span>{skill.name}</span>
                 </li>
               ))}
@@ -52,6 +57,7 @@ export function SkillsSection() {
         ))}
       </div>
     </section>
+    </ContentStatus>
   );
 }
 

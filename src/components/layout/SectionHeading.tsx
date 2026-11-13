@@ -1,25 +1,13 @@
-import React from 'react';
-
-interface SectionHeadingProps {
-  id?: string;
-  title: string;
-  action?: React.ReactNode;
-  className?: string;
+import type { ReactNode } from 'react';
+const sections: Record<string, {number: string; label: string; heading: string}> = {
+  'about me': {number:'02',label:'About',heading:'The person behind the projects'},
+  experience: {number:'03',label:'Experience',heading:'Where I have contributed'},
+  skills: {number:'04',label:'Toolkit',heading:'Tools I work with'},
+  achievements: {number:'05',label:'Milestones',heading:'Awards & recognition'},
+  contact: {number:'06',label:'Contact',heading:'Start a conversation'},
+};
+export function SectionHeading({id,title,action,className=''}:{id?:string;title:string;action?:ReactNode;className?:string}) {
+  const section=sections[title];
+  return <div id={id} className={`section-heading ${className}`}><div>{section && <p className="eyebrow"><span>{section.number}</span>{section.label}</p>}<h2>{section?.heading || title}</h2></div>{action && <div className="section-action">{action}</div>}</div>;
 }
-
-export function SectionHeading({ id, title, action, className = '' }: SectionHeadingProps) {
-  return (
-    <div id={id} className={`flex items-center justify-between gap-4 mb-8 sm:mb-12 ${className}`}>
-      <div className="flex items-center gap-3 sm:gap-4 flex-grow min-w-0">
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#ccd6f6] flex items-center gap-1.5 shrink-0">
-          <span className="text-[#64ffda] font-mono">/</span>
-          <span>{title}</span>
-        </h2>
-        <div className="h-[1px] bg-[#233554] flex-grow max-w-xl hidden sm:block" />
-      </div>
-      {action && <div className="shrink-0">{action}</div>}
-    </div>
-  );
-}
-
 export default SectionHeading;
