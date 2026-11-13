@@ -29,7 +29,7 @@ describe('Offline Fallback Data & Configuration', () => {
     for (const exp of experience) {
       expect(exp.role).toBeTruthy();
       expect(exp.company).toBeTruthy();
-      expect(exp.startDate).toBeTruthy();
+      expect(exp.startDate || exp.duration).toBeTruthy();
       expect(exp.bullets.length).toBeGreaterThan(0);
     }
   });

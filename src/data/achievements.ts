@@ -49,12 +49,4 @@ export const achievements: Achievement[] = [
     type: 'certification',
     description: 'Intensive hands-on workshop covering wireless communication architectures, RF frontends, and future telecommunications protocols.',
   },
-  {
-    id: 'iot-trainer',
-    title: 'IoT & Robotics Workshop Trainer (40+ students)',
-    issuer: 'College workshop',
-    date: 'Jan 2026',
-    type: 'competition',
-    description: 'Mentored and instructed 40+ engineering students in hands-on microcontroller interfacing, sensor circuits, and IoT cloud data logging.',
-  },
 ];

@@ -23,6 +23,8 @@ export interface Experience {
   endDate: string | 'Present';
   bullets: string[]; // impact-focused, measurable
   techStack?: string[];
+  duration?: string;
+  images?: { src: string; alt: string; caption?: string }[];
 }
 
 export interface ProjectDocument {

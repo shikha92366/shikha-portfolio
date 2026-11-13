@@ -13,6 +13,24 @@ import { profile } from '../data/profile';
 export const contentQueryOptions = {
   staleTime: 120_000, refetchInterval: 120_000, refetchOnWindowFocus: true, retry: false,
 };
+const hiddenPublicProjectSlugs = new Set(['lora-telemetry-node', 'stm32-smart-power-monitor']);
+export function filterPublicProjects(projectList: Project[]) {
+  return projectList.filter(project => !hiddenPublicProjectSlugs.has(project.slug));
+}
+const workshopExperience = experience.find(item => item.id === 'trainer');
+export function mapExperienceRecords(raw: any[]) {
+  return raw.map(record => {
+    const mapped = m.mapSanityExperience(record);
+    return mapped.id === 'experience-trainer' && workshopExperience
+      ? { ...workshopExperience, id: mapped.id }
+      : mapped;
+  });
+}
+export function mapPublicAchievements(raw: any[]) {
+  return raw
+    .map(m.mapSanityAchievement)
+    .filter(achievement => achievement.id !== 'iot-trainer' && achievement.id !== 'achievement-iot-trainer');
+}
 function useContent<T>(key: string, query: string, mapper: (raw: any) => T, fallback: T, params: Record<string, string> = {}) {
   const result = useQuery({
     queryKey: ['content', key, params],
@@ -30,14 +48,14 @@ function useContent<T>(key: string, query: string, mapper: (raw: any) => T, fall
     contentError: result.data?.error,
   };
 }
-export function useProjects() { return useContent<Project[]>('projects', q.ALL_PROJECTS_QUERY, raw => (raw || []).map(m.mapSanityProject), projects); }
+export function useProjects() { return useContent<Project[]>('projects', q.ALL_PROJECTS_QUERY, raw => filterPublicProjects((raw || []).map(m.mapSanityProject)), filterPublicProjects(projects)); }
 export function useProject(slug: string | undefined) {
   return useContent('project', q.PROJECT_BY_SLUG_QUERY, raw => raw ? m.mapSanityProject(raw) : null,
     projects.find(p => p.slug === slug) ?? null, { slug: slug ?? '' });
 }
-export function useExperience() { return useContent<Experience[]>('experience', q.ALL_EXPERIENCE_QUERY, raw => (raw || []).map(m.mapSanityExperience), experience); }
+export function useExperience() { return useContent<Experience[]>('experience', q.ALL_EXPERIENCE_QUERY, mapExperienceRecords, experience); }
 export function useSkills() { return useContent<Skill[]>('skills', q.ALL_SKILLS_QUERY, raw => (raw || []).map(m.mapSanitySkill), skills); }
-export function useAchievements() { return useContent<Achievement[]>('achievements', q.ALL_ACHIEVEMENTS_QUERY, raw => (raw || []).map(m.mapSanityAchievement), achievements); }
+export function useAchievements() { return useContent<Achievement[]>('achievements', q.ALL_ACHIEVEMENTS_QUERY, mapPublicAchievements, achievements.filter(achievement => achievement.id !== 'iot-trainer')); }
 export interface PublicDocument {
   id: string;
   title: string;

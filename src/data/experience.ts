@@ -30,12 +30,20 @@ export const experience: Experience[] = [
   },
   {
     id: 'trainer',
-    role: 'IoT & Robotics Workshop Trainer',
-    company: 'College workshop (40+ students)',
-    startDate: 'Jan 2026',
-    endDate: 'Jan 2026',
+    role: 'IoT & Robotics Workshop',
+    company: 'PM SHRI Government Girls Higher Secondary School, Banda, Uttar Pradesh',
+    startDate: '',
+    endDate: '',
+    duration: 'Three-day workshop',
     bullets: [
-      'Trained 40+ students in IoT and robotics fundamentals through hands-on sessions.',
+      'Participated in a three-day IoT & Robotics workshop introducing students to technology from the fundamentals.',
+      'Conducted hands-on learning activities involving circuits, LEDs and sensors.',
+      'Introduced basic coding and IoT concepts through demonstrations and practical activities.',
+      'Encouraged curiosity, experimentation, problem-solving and student participation.',
+    ],
+    images: [
+      { src: '/images/experience/iot-workshop-banda-1.jpg', alt: 'Students participating in a hands-on robotics demonstration at PM SHRI Government Girls Higher Secondary School, Banda', caption: 'Hands-on robotics demonstration' },
+      { src: '/images/experience/iot-workshop-banda-2.jpg', alt: 'Students and workshop facilitators at PM SHRI Government Girls Higher Secondary School, Banda', caption: 'Workshop participants' },
     ],
   },
 ];
