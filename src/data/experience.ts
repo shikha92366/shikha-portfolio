@@ -46,4 +46,24 @@ export const experience: Experience[] = [
       { src: '/images/experience/iot-workshop-banda-2.jpg', alt: 'Students and workshop facilitators at PM SHRI Government Girls Higher Secondary School, Banda', caption: 'Workshop participants' },
     ],
   },
+  {
+    id: 'solar-outreach',
+    role: 'Space Science Outreach & Solar Observation',
+    company: 'PSIT Vyomnauts',
+    startDate: '9 Nov 2024',
+    endDate: '',
+    bullets: [
+      'Participated in a space-science outreach activity with local school students, introducing them to the Sun, solar activity and the importance of observing astronomical objects safely.',
+      'Introduced students to basic space-science concepts and the Sun’s role in our solar system.',
+      'Demonstrated safe solar observation using appropriate solar-viewing glasses.',
+      'Explained sunspots as regions associated with intense magnetic activity and their connection to solar phenomena.',
+      'Encouraged curiosity about astronomy through direct observation, questions and interactive learning.',
+    ],
+    techStack: ['Solar observation', 'STEM outreach', 'Astronomy'],
+    images: [
+      { src: '/images/experience/solar-outreach-presentation.jpg', alt: 'Presentation on the Sun and space science during the PSIT Vyomnauts outreach session', caption: 'Space-science presentation' },
+      { src: '/images/experience/solar-glasses-observation.jpg', alt: 'Students safely observing the Sun with solar-viewing glasses during the outreach activity', caption: 'Safe solar observation' },
+      { src: '/images/experience/solar-outreach-students.jpg', alt: 'Students engaging in a group space-science learning activity led by PSIT Vyomnauts', caption: 'Interactive learning session' },
+    ],
+  },
 ];

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { experience } from '../../data/experience';
 import { mapExperienceRecords, mapPublicAchievements } from '../useSanityData';
 
 describe('public workshop experience', () => {
@@ -22,6 +23,23 @@ describe('public workshop experience', () => {
       ]),
     });
     expect(records[1].bullets.join(' ')).not.toMatch(/40\+|January 2026|Jan 2026|College workshop/i);
+  });
+
+  it('includes the solar outreach experience as a separate entry with a literal date and three photos', () => {
+    const solarOutreach = experience.find(item => item.id === 'solar-outreach');
+
+    expect(solarOutreach).toMatchObject({
+      id: 'solar-outreach',
+      role: 'Space Science Outreach & Solar Observation',
+      company: 'PSIT Vyomnauts',
+      startDate: '9 Nov 2024',
+      endDate: '',
+      images: expect.arrayContaining([
+        expect.objectContaining({ src: '/images/experience/solar-outreach-presentation.jpg' }),
+        expect.objectContaining({ src: '/images/experience/solar-glasses-observation.jpg' }),
+        expect.objectContaining({ src: '/images/experience/solar-outreach-students.jpg' }),
+      ]),
+    });
   });
 
   it('hides only the duplicate unverified workshop achievement', () => {

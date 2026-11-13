@@ -64,21 +64,41 @@ export function ExperienceTabs() {
             </ul>
 
             {currentExp.images && currentExp.images.length > 0 && <div>
-              <h4 className="text-[11px] font-mono uppercase tracking-wider text-[#9ba7b8] mb-2">Workshop photographs</h4>
-              <div className="grid grid-cols-2 gap-2.5">
-                {currentExp.images.map((image) => (
-                  <button
-                    key={image.src}
-                    type="button"
-                    onClick={() => setActiveImage(image)}
-                    aria-label={`Expand image: ${image.caption || image.alt}`}
-                    className="group relative aspect-[4/3] overflow-hidden rounded-md border border-[#263141] bg-[#080c12] text-left hover:border-[#83b4ff]/60 transition-colors"
-                  >
-                    <img src={image.src} alt={image.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                    <span className="absolute inset-x-0 bottom-0 bg-[#080c12]/75 px-2 py-1.5 text-[10px] leading-snug text-[#eef3fb]">{image.caption}</span>
-                  </button>
-                ))}
-              </div>
+              <h4 className="text-[11px] font-mono uppercase tracking-wider text-[#9ba7b8] mb-2">Photographs</h4>
+              {currentExp.images.length === 3 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-7 gap-2.5">
+                  {currentExp.images.map((image, index) => {
+                    const isWide = index === 2;
+                    return (
+                      <button
+                        key={image.src}
+                        type="button"
+                        onClick={() => setActiveImage(image)}
+                        aria-label={`Expand image: ${image.caption || image.alt}`}
+                        className={`group relative overflow-hidden rounded-md border border-[#263141] bg-[#080c12] text-left hover:border-[#83b4ff]/60 transition-colors ${isWide ? 'sm:col-span-3 aspect-[16/10]' : 'sm:col-span-2 aspect-[4/5]'}`}
+                      >
+                        <img src={image.src} alt={image.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                        <span className="absolute inset-x-0 bottom-0 bg-[#080c12]/75 px-2 py-1.5 text-[10px] leading-snug text-[#eef3fb]">{image.caption}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 gap-2.5">
+                  {currentExp.images.map((image) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      onClick={() => setActiveImage(image)}
+                      aria-label={`Expand image: ${image.caption || image.alt}`}
+                      className="group relative aspect-[4/3] overflow-hidden rounded-md border border-[#263141] bg-[#080c12] text-left hover:border-[#83b4ff]/60 transition-colors"
+                    >
+                      <img src={image.src} alt={image.alt} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                      <span className="absolute inset-x-0 bottom-0 bg-[#080c12]/75 px-2 py-1.5 text-[10px] leading-snug text-[#eef3fb]">{image.caption}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>}
           </div>
 
